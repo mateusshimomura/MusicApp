@@ -15,6 +15,7 @@ RecyclerView.Adapter<ArtistaRecyclerAdapter.ViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var artistas = emptyList<Artista>()
+    private var ctx = context
 
     override fun onCreateViewHolder(holder: ViewGroup, position: Int): ViewHolder {
         val view = inflater.inflate(R.layout.artista_item, holder, false)
@@ -26,10 +27,17 @@ RecyclerView.Adapter<ArtistaRecyclerAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val current = artistas[position]
         holder.nomeArtista.text = current.nome
+//        holder.fotoArtista(current.foto)
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val nomeArtista: TextView = itemView.txtArtistaNome
+//        val fotoArtista: ImageView = itemView.fotoArtista
+
+//        fun fotoArtista(caminho: String) {
+//            itemView.fotoArtista.setImageURI()
+//        }
+
     }
 
 
